@@ -1,0 +1,17 @@
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+.layout {
+  padding: 0 24px;
+
+  @include breakpoint(tablet) {
+    padding: 0 39px;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 20px;
+  }
+}

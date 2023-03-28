@@ -1,0 +1,22 @@
+.header {
+  height: 96px;
+
+  @include breakpoint(tablet) {
+    height: 138px;
+  }
+
+  @include breakpoint(desktop) {
+    height: 170px;
+    margin-bottom: 4px;
+  }
+
+  .layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+
+.logo__wrap {
+}
