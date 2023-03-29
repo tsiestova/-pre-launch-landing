@@ -1,5 +1,3 @@
-//@import "typography";
-
 .section-promo {
   padding-top: 38px;
   overflow: hidden;
@@ -12,24 +10,8 @@
   @include breakpoint(desktop) {
     padding-bottom: 33px;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1150px 10px 1fr;
-  }
-
-  &:before {
-    @include breakpoint(desktop) {
-      content: "";
-      width: 100%;
-      height: 240px;
-      background: #e8eff2;
-      position: absolute;
-      right: 0;
-      margin-right: -0.6vw;
-      border-radius: 20px;
-      grid-column: 4;
-      top: 21px;
-      max-width: 255px;
-    }
+    //background: linear-gradient(to left, #e8eff2, #e8eff2) no-repeat
+    //  calc(50% + 1385px / 2) 25px / 255px 240px;
   }
 
   .layout {
@@ -40,8 +22,20 @@
 
     @include breakpoint(desktop) {
       padding: 0 20px;
-      grid-column: 2;
-      gap: 35px;
+      position: relative;
+    }
+
+    &:before {
+      @include breakpoint(desktop) {
+        content: "";
+        background: url(./assets/shared/pattern-square.svg) no-repeat;
+        max-width: 255px;
+        position: absolute;
+        height: 240px;
+        top: 0;
+        width: 100%;
+        left: 101%;
+      }
     }
   }
 }
@@ -100,30 +94,21 @@
 
   @include breakpoint(tablet) {
     padding: 63px 0 10px 39px;
-    //flex: 1.2;
     width: 55%;
   }
 
   @include breakpoint(desktop) {
     padding-left: 0;
     width: 50%;
-    padding-right: 90px;
+    padding-right: 100px;
   }
 }
 
 .section-promo__pic {
-  //border-radius: 20px;
-  //overflow: hidden;
-  //height: 331px;
-  //box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
   width: 100%;
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-
-  @include breakpoint(tablet) {
-    //height: 425px;
-  }
 
   img {
     width: 100%;
@@ -144,7 +129,6 @@
 .section-promo__pic__wrap {
   position: relative;
   height: 331px;
-  //overflow: hidden;
 
   @include breakpoint(tablet) {
     width: 45%;
@@ -155,6 +139,7 @@
   @include breakpoint(desktop) {
     height: 480px;
     width: 50%;
+    padding-left: 15px;
   }
 }
 
@@ -162,7 +147,7 @@
   height: 100%;
   width: 100vw;
   margin-left: 24px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
   border-radius: 20px;
 
   @include breakpoint(desktop) {
