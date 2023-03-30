@@ -1,7 +1,7 @@
 
 ### Links
 
-- Live Site: [Demo]()
+- Live Site: [Demo](https://pre-launch-landing.vercel.app/)
 
 ### Built with
 
@@ -9,6 +9,6 @@
 - SCSS properties
 - Flexbox
 - Mobile-first workflow
-
+ 
  
   
