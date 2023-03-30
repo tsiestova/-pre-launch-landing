@@ -10,8 +10,8 @@
   @include breakpoint(desktop) {
     padding-bottom: 33px;
     position: relative;
-    //background: linear-gradient(to left, #e8eff2, #e8eff2) no-repeat
-    //  calc(50% + 1385px / 2) 25px / 255px 240px;
+    background: url(./assets/shared/pattern-square.svg) no-repeat
+      calc(50% + 1385px / 2) 25px / 255px 240px;
   }
 
   .layout {
@@ -23,19 +23,6 @@
     @include breakpoint(desktop) {
       padding: 0 20px;
       position: relative;
-    }
-
-    &:before {
-      @include breakpoint(desktop) {
-        content: "";
-        background: url(./assets/shared/pattern-square.svg) no-repeat;
-        max-width: 255px;
-        position: absolute;
-        height: 240px;
-        top: 0;
-        width: 100%;
-        left: 101%;
-      }
     }
   }
 }
@@ -86,6 +73,12 @@
     justify-content: start;
     gap: 40px;
   }
+
+  .btn__primary {
+    @include breakpoint(tablet) {
+      margin-right: 20px;
+    }
+  }
 }
 
 .section-promo--text-block {
@@ -107,28 +100,28 @@
 .section-promo__pic {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+
+  @include breakpoint(desktop) {
+    border-radius: 20px;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: left;
-
-    @include breakpoint(tablet) {
-      object-fit: contain;
-    }
-
-    @include breakpoint(desktop) {
-      object-fit: cover;
-    }
   }
 }
 
 .section-promo__pic__wrap {
   position: relative;
-  height: 331px;
+  height: 337px;
+  //padding: 20px 5px 5px 5px;
+  overflow: hidden;
 
   @include breakpoint(tablet) {
     width: 45%;
@@ -145,10 +138,9 @@
 
 .picture-wrap {
   height: 100%;
-  width: 100vw;
-  margin-left: 24px;
-  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 20px;
+  width: 100%;
+  margin-left: 18px;
+  padding: 5px;
 
   @include breakpoint(desktop) {
     width: 100%;

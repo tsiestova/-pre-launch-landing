@@ -8,6 +8,9 @@
   @include breakpoint(desktop) {
     margin-bottom: 168px;
     padding: 0;
+
+    background: url(./assets/shared/pattern-square.svg) no-repeat
+      calc(1350px / 2 - 50%) 25px / 255px 240px;
   }
 }
 
@@ -18,19 +21,6 @@
     max-width: 1150px;
     margin: auto;
     padding: 0 20px;
-  }
-
-  &:before {
-    @include breakpoint(desktop) {
-      content: "";
-      background: url(./assets/shared/pattern-square.svg) no-repeat;
-      max-width: 255px;
-      position: absolute;
-      height: 236px;
-      width: 100%;
-      right: 101%;
-      bottom: 0;
-    }
   }
 }
 
@@ -74,7 +64,7 @@
   .layout {
     @include breakpoint(tablet) {
       display: flex;
-      padding: 0 39px;
+      padding: 0;
       gap: 99px;
     }
 
@@ -116,10 +106,8 @@
 .section-gallery__pic-item {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
 
   &.pic-item--color {
-    border-radius: 20px;
     overflow: hidden;
 
     .section-gallery__pic {
@@ -150,43 +138,38 @@
 
 .section-gallery__pic-list {
   height: 100%;
-  display: grid;
-  grid-template-columns: minmax(30%, auto) 20px auto;
+  display: flex;
+  gap: 23px;
 
   @include breakpoint(tablet) {
-    grid-template-columns: auto 30px auto;
   }
 
   .section-gallery__pic-item {
     &:first-child {
-      grid-column: 1;
-      margin-left: -6vw;
+      flex: 1;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
 
       @include breakpoint(tablet) {
-        grid-column: 1;
-        margin-left: 0;
+        border-radius: 20px;
       }
 
       @include breakpoint(desktop) {
-        grid-column: 1;
       }
     }
 
     &:nth-child(2) {
-      grid-column: 3;
+      flex: 2;
+      border-radius: 20px;
 
       @include breakpoint(tablet) {
-        grid-column: 3;
       }
 
       @include breakpoint(desktop) {
-        grid-column: 3;
       }
     }
   }
 
   @include breakpoint(desktop) {
-    grid-template-columns: auto 30px auto 1fr;
-    gap: 0;
   }
 }
